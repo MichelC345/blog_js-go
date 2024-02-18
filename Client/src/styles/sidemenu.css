@@ -1,0 +1,79 @@
+.sidemenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-right: 1px solid #0a70b8;
+    height: 100vh;
+    width: 5vw;
+}
+
+.menuText {
+    display: block;
+    color: #FFF;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+.input {
+    width: 100%;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    border: 1px solid #0a70b8;
+    border-radius: 10px;
+    color: #5a5a5a;
+}
+
+.textArea {
+    width: 100%;
+}
+
+.upperSearchPanel {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputSearch {
+    width: 80%;
+    padding: 1vh;
+    border: 1px solid #0a70b8;
+    border-radius: 10px;
+    color: #5a5a5a;
+}
+
+.foundPosts {
+    height: 30vh;
+    margin-top: 2vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 1208px) {
+    i {
+        font-size: 2vh;
+    }
+
+    .sidemenu {
+        flex-direction: row;
+        width: 100vw;
+        height: 12vh;
+        border-right: 0px;
+        border-top: 1px solid #0a70b8;
+    }
+
+    .menuText {
+        display: none;
+    }
+}
+
+
+
+/*
+SIDEMENU  
+h-16 md:h-full md:w-24 border-t md:border-r 
+md:border-t-0 border-green-blog flex flex-row 
+sm:flex-col items-center justify-evenly text-base sm:text-xl 
+*/

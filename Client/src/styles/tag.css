@@ -1,0 +1,26 @@
+.tag {
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid #0a70b8;
+    border-radius: 9999px;
+    margin-right: 1rem;
+    padding: 0.2rem 1rem;
+    height: 2rem;
+}
+
+
+@media (max-width: 1208px){
+    .tag {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px){
+    .tag {
+        font-size: 10px;
+    }
+}
+
+/*
+inline-block border border-green-blog rounded-full w-36 h-8 mr-5 text-sm 
+*/

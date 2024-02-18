@@ -1,0 +1,64 @@
+/*
+mb-10 text-white w-12/12 sm:w-9/12 flex flex-col-reverse sm:flex-col xl:flex-row justify-evenly hover:cursor-pointer
+*/
+
+
+.post {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content {
+    font-size: 16px;
+}
+
+.completeDate {
+    display: none;
+}
+
+.commonDate {
+    display: block;
+}
+
+@media (max-width: 1280px){
+    .title {
+        font-size: 30px;
+    }
+
+    .content {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 768px){
+
+    .title {
+        font-size: 20px;
+    }
+
+    .content {
+        font-size: 14px;
+    }
+
+    .post {
+        flex-direction: column-reverse;
+    }
+
+    .completeDate {
+        display: block;
+    }
+
+    .commonDate {
+        display: none;
+    }
+}

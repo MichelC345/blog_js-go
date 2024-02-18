@@ -1,0 +1,30 @@
+.postsContainer {
+    display: flex;
+    width: 100vw;
+    height: 75vh;
+    flex-direction: column;
+    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts {
+    height: 75vh;
+    margin-left: 4rem;
+}
+
+.pagination {
+    width: 100vw;
+    height: 10vh;
+}
+
+@media (max-width: 1208px) {
+    .pagination {
+        font-size: 10vh;
+    }
+}
+
+
+/* 
+    flex ml-10 h-postsHeightMobileSmall w-full lg:h-400
+*/

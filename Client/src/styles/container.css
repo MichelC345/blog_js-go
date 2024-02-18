@@ -1,0 +1,16 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+ 
+@media (max-width: 1208px){
+    .container {
+        flex-direction: column-reverse;
+    }
+}
+
+/*
+flex flex-col-reverse justify-around md:flex-row w-screen h-screen md:justify-between bg-background
+*/
