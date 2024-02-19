@@ -1,0 +1,16 @@
+{
+  "name": "blog_js-go",
+  "version": "1.0.0",
+  "description": "Projeto blog_js, porém há a migração de Node.js e Express para Go na parte de back-end.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd Client && npm run dev\" \"cd Server && go run Server.go\" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
