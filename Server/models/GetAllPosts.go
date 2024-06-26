@@ -1,12 +1,13 @@
 package models
 
 import (
-	//"fmt"
+	"fmt"
 	"github.com/MichelC345/blog_js-go/tree/main/Server/dbconfig"
 	"github.com/lib/pq"
 )
 
 func GetAllPosts() (posts []Post, err error) {
+	fmt.Println("executando função de receber todos os posts...")
 	db, err := dbconfig.ConectaDB()
 	if (err != nil) {
 		panic(err)

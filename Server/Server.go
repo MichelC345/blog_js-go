@@ -28,7 +28,6 @@ func CORSMiddleware() gin.HandlerFunc {
 func main() {
 	router := gin.Default() //cria uma variável para armazenar grupos de rotas
 
-	//utiliza o CORS
 	router.Use(CORSMiddleware())
 
 	//define as rotas e as funções que cada uma irá utilizar

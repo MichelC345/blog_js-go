@@ -33,9 +33,11 @@ const post = ({params}: {params: { id: string}}) => {
         const fetchPost = async () => {
             try {
                 const response = await axios.get(`http://localhost:8080/posts/${Number.parseInt(params.id)}`);
+                //console.log(response);
                 setPostData(response.data);
 
                 setTitle(response.data.title);
+                console.log(response.data.title)
                 setContent(response.data.content);
                 setTags(response.data.tags.join());
             } catch (error) {
@@ -46,6 +48,7 @@ const post = ({params}: {params: { id: string}}) => {
         const fetchComments = async () => {
             try {
                 const response = await axios.get(`http://localhost:8080/comments/${Number.parseInt(params.id)}`);
+                console.log(response.data.content)
                 if(response.status === 200){
                     console.log(response.data);
                     setComments(response.data);

@@ -15,8 +15,8 @@ type Post struct {
 
 type Comment struct {
 	Id int `json:"id"`
-	Title string `json:"title"`
-	Content string `json:"title"`
+	Author string `json:"author"`
+	Content string `json:"content"`
 	Date time.Time `json:"date"`
 	PostId int `json:"postId"`
 }
