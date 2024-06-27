@@ -20,3 +20,11 @@ type Comment struct {
 	Date time.Time `json:"date"`
 	PostId int `json:"postId"`
 }
+
+type CreatePostBody struct {
+	Title string `json:"title"`
+	Content string `json:"content"`
+	Tags []string `json:"tags"`
+	TagsOrigSize int `json:"tagsOriginalSize"`
+	Author string `json:"author"`
+}
