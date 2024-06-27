@@ -11,7 +11,11 @@ import (
 )
 
 //type Post = models.Post
-type CreatePostBody = models.CreatePostBody
+type (
+	CreatePostBody    = models.CreatePostBody
+	CreateCommentBody = models.CreateCommentBody
+)
+
 
 func CreatePost(c *gin.Context) {
 	fmt.Println("executando função de criar post...")
@@ -67,4 +71,38 @@ func CreatePost(c *gin.Context) {
 	}
 }
 
-func CreateComment(c *gin.Context) {}
+func CreateComment(c *gin.Context) {
+	fmt.Println("executando função de criar comentário...")
+	var (
+		rqBody CreateCommentBody
+	)
+	if err := c.BindJSON(&rqBody);err != nil {
+		panic(err)
+	}
+	if (len(rqBody.Author) == 0 || len(rqBody.Content) == 0) {
+		c.String(http.StatusInternalServerError, "Preencha todos os campos.")
+	}else if (len(rqBody.Author) < 4) {
+		c.String(http.StatusInternalServerError, 
+			"O nome do usuário deve ter ao menos 4 caracteres e não pode conter espaços.")
+	}else if (len(rqBody.Content) < 4) {
+		c.String(http.StatusInternalServerError, 
+			"O comentário deve ter ao menos 10 caracteres.")
+	}else {
+		//conecta com o banco de dados
+		db, err := dbconfig.ConectaDB()
+		if (err != nil) {
+			panic(err)
+		}
+		defer db.Close()
+
+		
+		//insere os dados e retorna status positivo
+		date, postId := time.Now(), c.Param("id")
+		if _, err := db.Query(`INSERT INTO public.comentarios (author, content, date, "postId")
+		VALUES ($1, $2, $3, $4) RETURNING id`, rqBody.Author, rqBody.Content, date, postId);err != nil {
+			panic(err)
+		}
+		fmt.Println("comentário inserido com sucesso", rqBody, "no post", postId)
+		c.Status(http.StatusOK)
+	}
+}

@@ -28,3 +28,8 @@ type CreatePostBody struct {
 	TagsOrigSize int `json:"tagsOriginalSize"`
 	Author string `json:"author"`
 }
+
+type CreateCommentBody struct {
+	Author string `json:"author"`
+	Content string `json:"comment"`
+}
