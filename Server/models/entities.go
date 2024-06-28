@@ -33,3 +33,10 @@ type CreateCommentBody struct {
 	Author string `json:"author"`
 	Content string `json:"comment"`
 }
+
+type EditPostBody struct {
+	Title string `json:"editedTitle"`
+	Content string `json:"editedContent"`
+	Tags []string `json:"editedTags"`
+	TagsOrigSize int `json:"editedTagsOriginalSize"`
+}

@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	//"github.com/MichelC345/blog_js-go/tree/main/Server/dbconfig"
 	"github.com/gin-gonic/gin"
 	"github.com/MichelC345/blog_js-go/tree/main/Server/handlers"
 )
@@ -36,8 +35,8 @@ func main() {
 	router.GET("/comments/:id", handlers.FindComments)
 	router.POST("/create", handlers.CreatePost)
 	router.POST("/posts/:id/createComment", handlers.CreateComment)
-	router.DELETE("/posts/:id/remove", handlers.DeletePost)
-	router.PUT("/posts/:id/edit", handlers.UpdatePost)
+	router.GET("/posts/:id/remove", handlers.DeletePost)
+	router.POST("/posts/:id/edit", handlers.UpdatePost)
 
 	if err := router.Run(":8080"); err != nil { //busca iniciar na porta 8080, verificando se já há alguma execução
 		panic(err)
