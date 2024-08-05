@@ -33,9 +33,7 @@ const post = ({params}: {params: { id: string}}) => {
         const fetchPost = async () => {
             try {
                 const response = await axios.get(`http://localhost:8080/posts/${Number.parseInt(params.id)}`);
-                //console.log(response);
                 setPostData(response.data);
-
                 setTitle(response.data.title);
                 console.log(response.data.title)
                 setContent(response.data.content);
@@ -62,7 +60,7 @@ const post = ({params}: {params: { id: string}}) => {
         fetchComments();
     }, [params.id]);
 
-    const dataParsed = post && post.date ? new Date(post.date.toString()) : null;
+    const dataParsed = post?.date ? new Date(post.date.toString()) : null;
     
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
 
